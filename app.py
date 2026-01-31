@@ -15,7 +15,7 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 def get_gemini_response(image, prompt):
     """Send image to Google's AI and get calorie information"""
     try:
-        model = genai.GenerativeModel('gemini-1.5-pro')
+        model = genai.GenerativeModel('gemini-2.5-flash')
         response = model.generate_content([image[0], prompt])
         return response.text
     except Exception as e:
